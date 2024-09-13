@@ -34,7 +34,6 @@
 
 // now navbar.js must be imported here anywhere in the app function which is passed to index.js file which is going to be renderd in html.js
 
-import './App.css';
 import Navbar from './Navbar'; //selfclosing in or it can be other type also
 import Home from './Home';
 
