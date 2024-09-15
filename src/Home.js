@@ -66,12 +66,20 @@ const Home = () => {
         }
     ]);
 
+    const handleDelete = (id) => {
+        const newBlogs = blogs.filter(blog => blog.id !== id); //filter non id delete elements from given data and making original blog equal to this element
+        setBlogs(newBlogs);
+    }
+
+
+
+
     //array destructuring :-  const [blogs, setBlogs] blogs refer to the current state value and setBlogs is the function you use to update that state value 
     //key property can track the deleted items in this can id can be key because it is unique
     return ( 
         <div className="Home">
-            <BlogList blogs = {blogs} title = "All blogs!!" />
-            <BlogList blogs = {blogs.filter((blog)=>blog.author==="Isabella Taylor")} title = "Isabella Taylor's blogs!!" />
+            <BlogList blogs = {blogs} title = "All blogs!" handleDelete = {handleDelete}  />
+            {/* <BlogList blogs = {blogs.filter((blog)=>blog.author==="Isabella Taylor")} title = "Isabella Taylor's blogs!!" /> */}
         </div>
     );
 }    
