@@ -3,70 +3,9 @@ import BlogList from "./BlogList";
 //this hook will be used more futher its important
 const Home = () => {
 
-    const [blogs, setBlogs] = useState([
-        {
-            id: 1,
-            title: "Understanding React Hooks",
-            body: "React hooks allow you to use state and other React features without writing a class. The most commonly used hooks are useState and useEffect.",
-            author: "Alice Johnson"
-        },
-        {
-            id: 2,
-            title: "JavaScript ES6 Features",
-            body: "ES6 introduced several important features like arrow functions, template literals, and destructuring that made JavaScript more powerful and easier to write.",
-            author: "Bob Smith"
-        },
-        {
-            id: 3,
-            title: "CSS Grid Layout Guide",
-            body: "CSS Grid is a two-dimensional layout system that provides flexibility in creating web designs. It allows you to create complex layouts with ease.",
-            author: "Carol White"
-        },
-        {
-            id: 4,
-            title: "Asynchronous JavaScript with Promises",
-            body: "Promises in JavaScript provide a cleaner way to work with asynchronous operations. They allow handling of asynchronous code in a more readable manner.",
-            author: "David Brown"
-        },
-        {
-            id: 5,
-            title: "Introduction to TypeScript",
-            body: "TypeScript is a superset of JavaScript that adds static types. It helps in catching errors early during development and improves code readability.",
-            author: "Eva Green"
-        },
-        {
-            id: 6,
-            title: "Version Control with Git",
-            body: "Git is a powerful version control system used by developers worldwide. It allows you to track changes, collaborate on projects, and manage code efficiently.",
-            author: "Frank Harris"
-        },
-        {
-            id: 7,
-            title: "Building RESTful APIs with Node.js",
-            body: "Node.js allows for creating fast and scalable network applications. Learn how to build RESTful APIs using Express.js and Node.js.",
-            author: "Grace Lee"
-        },
-        {
-            id: 8,
-            title: "Web Development with React and Redux",
-            body: "Redux is a state management library that can be used with React to build scalable applications with predictable state management.",
-            author: "Henry Wilson"
-        },
-        {
-            id: 9,
-            title: "Deploying Applications with Docker",
-            body: "Docker simplifies the deployment of applications by allowing you to package the code along with dependencies into containers that can run anywhere.",
-            author: "Isabella Taylor"
-        },
-        {
-            id: 10,
-            title: "Responsive Web Design with Media Queries",
-            body: "Media queries are a key tool in responsive web design, allowing you to create layouts that adapt to different screen sizes.",
-            author: "Jack Martinez"
-        }
-    ]);
-
-    const [name, setName] = useState('mario');
+    const [blogs, setBlogs] = useState(null);
+    //null because data to be fetched from json file and after fetching it must be updated in usestate function
+    // const [name, setName] = useState('mario');
 
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id); //filter non id delete elements from given data and making original blog equal to this element
@@ -76,37 +15,30 @@ const Home = () => {
     //runs every time it rerender
     //we use it for fetch data or communicate with some kind of authentication service those knows as side effect in react but now we simple doing consolelog
     // useEffect fires a function
+// npx json-server --watch data/db.json --port 8000
+//for making GET response we are doing this 
 
-    
+
     useEffect(()=>{
-        console.log('use effect');
-        console.log(name);
-    }, [name]);
+       fetch('http://localhost:8000/blogs')
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+             setBlogs(data);
+        });
+    }, []);
 
-
-
-    // any state value can trigger the function passing dependency that is name and if changes it will run the function
-    //[]empty dependency array make sure that this hook only runs the function after the first initial render thereafter if state changes it won't run the function again it only runs it once 
-    // thats gonna fire that function at every render
-    // dependency array makes that we not need to fire function at every render so dependency array do some thing related to this
-    // dependency array is a array that we can pass into this useEffect hook we can pass it as second argument   ( () => {} , [] );
-
-    // state dependency we can also make make that changes on change of a particular state
-
-
-
-    //array destructuring :-  const [blogs, setBlogs] blogs refer to the current state value and setBlogs is the function you use to update that state value 
-    //key property can track the deleted items in this can id can be key because it is unique
     return ( 
         <div className="Home">
-            <BlogList blogs = {blogs} title = "All blogs!" handleDelete = {handleDelete}  />
-             <button onClick={()=>{setName('luigi')}}>change name</button> {/*if name is changed then useEffect will rerender the useState function and updated is displayed because name is dependency so if it changes then only useEffect will trigger  */}
-             <p>{name}</p>
+            {blogs&&<BlogList blogs = {blogs} title = "All blogs!" handleDelete = {handleDelete}  />}
+             {/* <button onClick={()=>{setName('luigi')}}>change name</button> if name is changed then useEffect will rerender the useState function and updated is displayed because name is dependency so if it changes then only useEffect will trigger  */}
+             {/* <p>{name}</p> */}
             {/* <BlogList blogs = {blogs.filter((blog)=>blog.author==="Isabella Taylor")} title = "Isabella Taylor's blogs!!" /> */}
         </div>
     );
 }    
-
+//json server:- fake api just a json file that we can use to test this out so
 
 
 
