@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import BlogList from "./BlogList";
 //this hook will be used more futher its important
 const Home = () => {
@@ -71,7 +71,13 @@ const Home = () => {
         setBlogs(newBlogs);
     }
 
+    //runs every time it rerender
+    //we use it for fetch data or communicate with some kind of authentication service those knows as side effect in react but now we simple doing consolelog
 
+    useEffect(()=>{
+        console.log('use effect');
+        console.log(blogs);
+    });
 
 
     //array destructuring :-  const [blogs, setBlogs] blogs refer to the current state value and setBlogs is the function you use to update that state value 
@@ -83,6 +89,10 @@ const Home = () => {
         </div>
     );
 }    
+
+
+
+
 //lets add css to blog preview
 //we map through the data and we take each item into that as we map through it and we output a bit of templete for each and each one has a key property which is the id in our case but it can be any unique property 
 //inside templete javascript can be implemented using curly braces
@@ -108,3 +118,4 @@ export default Home;
 //3) it allows me to show how to use props all right 
 // props are a way to pass data from one component a parent cpmponent into a child component so this(Home.js) is the parent componet and BlogList is child component right there so we need to pass the blog data into the blogslist component
 // we do this props by making a property name on bloglist 
+// useeffect not return anything to us so we not store it in const or anything
