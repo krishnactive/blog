@@ -1,0 +1,95 @@
+{
+    "blogs": [
+      {
+        "id": 1,
+        "title": "Understanding React Hooks",
+        "body": "React hooks allow you to use state and other React features without writing a class. The most commonly used hooks are useState and useEffect.",
+        "author": "Alice Johnson"
+      },
+      {
+        "id": 2,
+        "title": "JavaScript ES6 Features",
+        "body": "ES6 introduced several important features like arrow functions, template literals, and destructuring that made JavaScript more powerful and easier to write.",
+        "author": "Bob Smith"
+      },
+      {
+        "id": 3,
+        "title": "CSS Grid Layout Guide",
+        "body": "CSS Grid is a two-dimensional layout system that provides flexibility in creating web designs. It allows you to create complex layouts with ease.",
+        "author": "Carol White"
+      },
+      {
+        "id": 4,
+        "title": "Asynchronous JavaScript with Promises",
+        "body": "Promises in JavaScript provide a cleaner way to work with asynchronous operations. They allow handling of asynchronous code in a more readable manner.",
+        "author": "David Brown"
+      },
+      {
+        "id": 5,
+        "title": "Introduction to TypeScript",
+        "body": "TypeScript is a superset of JavaScript that adds static types. It helps in catching errors early during development and improves code readability.",
+        "author": "Eva Green"
+      },
+      {
+        "id": 6,
+        "title": "Version Control with Git",
+        "body": "Git is a powerful version control system used by developers worldwide. It allows you to track changes, collaborate on projects, and manage code efficiently.",
+        "author": "Frank Harris"
+      },
+      {
+        "id": 7,
+        "title": "Building RESTful APIs with Node.js",
+        "body": "Node.js allows for creating fast and scalable network applications. Learn how to build RESTful APIs using Express.js and Node.js.",
+        "author": "Grace Lee"
+      },
+      {
+        "id": 8,
+        "title": "Web Development with React and Redux",
+        "body": "Redux is a state management library that can be used with React to build scalable applications with predictable state management.",
+        "author": "Henry Wilson"
+      },
+      {
+        "id": 9,
+        "title": "Deploying Applications with Docker",
+        "body": "Docker simplifies the deployment of applications by allowing you to package the code along with dependencies into containers that can run anywhere.",
+        "author": "Isabella Taylor"
+      },
+      {
+        "id": 10,
+        "title": "Responsive Web Design with Media Queries",
+        "body": "Media queries are a key tool in responsive web design, allowing you to create layouts that adapt to different screen sizes.",
+        "author": "Jack Martinez"
+      },
+      {
+        "id": 11,
+        "title": "Mastering Python for Data Science",
+        "body": "Python has become the go-to language for data science due to its simplicity and vast ecosystem of libraries like pandas, NumPy, and scikit-learn.",
+        "author": "Kelly Adams"
+      },
+      {
+        "id": 12,
+        "title": "Introduction to Machine Learning",
+        "body": "Machine learning is a branch of artificial intelligence that allows computers to learn and make decisions without being explicitly programmed.",
+        "author": "Liam Scott"
+      },
+      {
+        "id": 13,
+        "title": "Understanding GraphQL APIs",
+        "body": "GraphQL is a query language for APIs that allows clients to request exactly the data they need, improving performance and flexibility.",
+        "author": "Mia Collins"
+      },
+      {
+        "id": 14,
+        "title": "Building Scalable Web Applications",
+        "body": "Scalability is a key concern for modern web applications. Learn techniques such as load balancing, caching, and database optimization to ensure your app scales efficiently.",
+        "author": "Nathan Carter"
+      },
+      {
+        "id": 15,
+        "title": "Exploring Cloud Computing",
+        "body": "Cloud computing offers on-demand delivery of computing resources over the internet. This blog explores how cloud solutions are transforming businesses.",
+        "author": "Olivia Green"
+      }
+    ]
+  }
+  

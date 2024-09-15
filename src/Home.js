@@ -76,10 +76,15 @@ const Home = () => {
     //runs every time it rerender
     //we use it for fetch data or communicate with some kind of authentication service those knows as side effect in react but now we simple doing consolelog
     // useEffect fires a function
+
+    
     useEffect(()=>{
         console.log('use effect');
         console.log(name);
     }, [name]);
+
+
+
     // any state value can trigger the function passing dependency that is name and if changes it will run the function
     //[]empty dependency array make sure that this hook only runs the function after the first initial render thereafter if state changes it won't run the function again it only runs it once 
     // thats gonna fire that function at every render
