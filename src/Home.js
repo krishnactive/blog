@@ -66,6 +66,8 @@ const Home = () => {
         }
     ]);
 
+    const [name, setName] = useState('mario');
+
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id); //filter non id delete elements from given data and making original blog equal to this element
         setBlogs(newBlogs);
@@ -73,11 +75,19 @@ const Home = () => {
 
     //runs every time it rerender
     //we use it for fetch data or communicate with some kind of authentication service those knows as side effect in react but now we simple doing consolelog
-
+    // useEffect fires a function
     useEffect(()=>{
         console.log('use effect');
-        console.log(blogs);
-    });
+        console.log(name);
+    }, [name]);
+    // any state value can trigger the function passing dependency that is name and if changes it will run the function
+    //[]empty dependency array make sure that this hook only runs the function after the first initial render thereafter if state changes it won't run the function again it only runs it once 
+    // thats gonna fire that function at every render
+    // dependency array makes that we not need to fire function at every render so dependency array do some thing related to this
+    // dependency array is a array that we can pass into this useEffect hook we can pass it as second argument   ( () => {} , [] );
+
+    // state dependency we can also make make that changes on change of a particular state
+
 
 
     //array destructuring :-  const [blogs, setBlogs] blogs refer to the current state value and setBlogs is the function you use to update that state value 
@@ -85,6 +95,8 @@ const Home = () => {
     return ( 
         <div className="Home">
             <BlogList blogs = {blogs} title = "All blogs!" handleDelete = {handleDelete}  />
+             <button onClick={()=>{setName('luigi')}}>change name</button> {/*if name is changed then useEffect will rerender the useState function and updated is displayed because name is dependency so if it changes then only useEffect will trigger  */}
+             <p>{name}</p>
             {/* <BlogList blogs = {blogs.filter((blog)=>blog.author==="Isabella Taylor")} title = "Isabella Taylor's blogs!!" /> */}
         </div>
     );
