@@ -36,12 +36,15 @@
 
 /* blog previews / list */
 .blog-preview {
+  /* individually css is applied on the map element made by the map property of javascript */
   padding: 10px 16px;
   margin: 20px 0;
   border-bottom: 1px solid #fafafa;
 }
+
 .blog-preview:hover {
   box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+  /* adding shadow at the back of the box on hover it */
 }
 .blog-preview h2 {
   font-size: 20px;

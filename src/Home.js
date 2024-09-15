@@ -1,4 +1,5 @@
 import { useState } from "react"
+import BlogList from "./BlogList";
 //this hook will be used more futher its important
 const Home = () => {
 
@@ -69,14 +70,8 @@ const Home = () => {
     //key property can track the deleted items in this can id can be key because it is unique
     return ( 
         <div className="Home">
-            {blogs.map((blog)=>(
-                <div className="blog-preview" key={blog.id}>
-                    <h2>{blog.title}</h2>
-                     <p>written by {blog.author}</p>
-                     <p>content: {blog.body}</p>
-                </div>
-            ))};
-           
+            <BlogList blogs = {blogs} title = "All blogs!!" />
+            <BlogList blogs = {blogs.filter((blog)=>blog.author==="Isabella Taylor")} title = "Isabella Taylor's blogs!!" />
         </div>
     );
 }    
@@ -94,6 +89,14 @@ const Home = () => {
 
 // parenthesis automatically invoke the function so then how to pass the function
 // to implement this problem of automatically invoked we wrap that function under anomous function
-
+//we can filter out which we needed to display blogs.filter((blog)=>blog.author=='kk')
  
 export default Home;
+
+
+//not placing the data directly in BlogList but keeping it Home and using props to pass the data because of three reasons
+//1) list component more reusable and we'll see exactly how later on
+//2) it allows me to still use this data in the home component later on if i need it in the future because the data is still going to be declared here
+//3) it allows me to show how to use props all right 
+// props are a way to pass data from one component a parent cpmponent into a child component so this(Home.js) is the parent componet and BlogList is child component right there so we need to pass the blog data into the blogslist component
+// we do this props by making a property name on bloglist 
