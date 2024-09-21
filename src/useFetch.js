@@ -1,7 +1,4 @@
-import {useState, useEffect} from 'react';
-
-// making a cleanup function to stop the change router to run in background or to stop it 
-// 
+import {useState, useEffect} from 'react'; 
 const useFetch = (url)=>{
 
     const [data, setData] = useState(null);
@@ -37,14 +34,11 @@ const useFetch = (url)=>{
              }) 
         }, 1000);
        return () => abortCont.abort();
-     }, [url]); // this dependency if whenever url is gonna changes its going to re-run this function to get the data for that endpoint 
+     }, [url]); 
 
      return {data, isPending, error}
 }
 
 export default useFetch
 
-// in abort error error we not want to update the state 
-// component trying to update and we won't get that error 
-// error anymore 
-// use of cleanfunction and abort controller 
+// route parameter is like variable inside a route

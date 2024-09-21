@@ -51,3 +51,8 @@
   color: #f1356d;
   margin-bottom: 8px;
 }
+
+.blog-preview a{
+  text-decoration: none;
+}
+/* removing link default style */
