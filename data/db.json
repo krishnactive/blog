@@ -1,12 +1,6 @@
 {
   "blogs": [
     {
-      "id": "1",
-      "title": "Understanding React Hooks",
-      "body": "React hooks allow you to use state and other React features without writing a class. The most commonly used hooks are useState and useEffect.",
-      "author": "Alice Johnson"
-    },
-    {
       "id": "2",
       "title": "JavaScript ES6 Features",
       "body": "ES6 introduced several important features like arrow functions, template literals, and destructuring that made JavaScript more powerful and easier to write.",
@@ -214,12 +208,6 @@
       "id": "7da4",
       "title": "title",
       "body": "see",
-      "author": "mario"
-    },
-    {
-      "id": "53d5",
-      "title": "na",
-      "body": "na",
       "author": "mario"
     }
   ]
