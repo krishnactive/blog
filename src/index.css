@@ -52,7 +52,21 @@
   margin-bottom: 8px;
 }
 
+/* removing link default style */
 .blog-preview a{
   text-decoration: none;
 }
-/* removing link default style */
+
+/* blog details page */
+
+.blog-details h2{
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+
+.blog-details div{
+  margin: 20px 0;
+}
+
+
