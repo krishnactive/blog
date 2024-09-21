@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+// useHistory for back forth movement of tab keeping track and going back in history
+
+
 
 const Create = () => {
     //tracking the input
@@ -6,6 +10,8 @@ const Create = () => {
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('mario');
     const [isPending, setIsPending] = useState(false);
+    const history = useHistory();
+
     //making post a request
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -20,7 +26,10 @@ const Create = () => {
             }).then(()=>{
                 console.log("New blog added");
                 setIsPending(false);
+                //history.go(-1); takes to previous page after submitting the form 
+                history.push('/');//instead go to home page placing route of home page
             })
+            
     }
 
 
